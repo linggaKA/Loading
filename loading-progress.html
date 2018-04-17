@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<style>
+#myProgress {
+  width: 100%;
+
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #ff4d4d;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+.navbar{
+ background:#ff4d4d;
+}
+.nav-link , .navbar-brand{
+ color: #f4f4f4;
+ cursor: pointer;
+}
+.nav-link{
+ margin-right: 1em !important;
+}
+
+.nav-link:hover{
+ background: #f4f4f4;
+ color: #f97300;
+}
+.navbar-collapse{
+ justify-content: flex-end;
+}
+.navbar-toggler{
+  background:#fff !important;
+}
+.header{
+ background-image: url('bg.jpg');
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: center;
+}
+
+.overlay{
+ position: absolute;
+ min-height: 100%;
+ min-width: 100%;
+ left: 0;
+ top: 0;
+ background: rgba(244, 244, 244, 0.59);
+}
+
+.description{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.description h1{
+ color:#F97300 ;
+}
+.description p{
+ color:#000;
+ font-family: sans-serif;
+ font-size: 20px;
+ width: 50%;
+ line-height: 1.5;
+}
+.description button{
+ border:1px  solid #F97300;
+ background:#F97300;
+ color:#fff;
+}
+.footer{
+  width: 100%;
+  height: 60px;
+  padding-top: 5px;
+  background-color: #ff4d4d;
+}
+.footer p{
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+}
+.footer p a{
+  font-family: sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+.footer p a:hover{
+  text-decoration: underline;
+  color: #fff;
+}
+</style>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top ">
+     <a class="navbar-brand" href="#">LinggaKA</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+  </nav>
+
+  <header class="header">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="description">
+       <h3>
+        Hello , Selamat Datang!
+        <p>
+        Nama aku Lingga. Aku mahasiswa semester 4 di salah satu institut yang
+        ada di Indonesia yaitu Institut Teknologi Kalimantan. Sebagai institut baru,
+        ITK memiliki profil yang ngak kalah menarik loh dari institut lainnya.
+        Mau lihat profil ITK lebih jauh? klik button dibawah ini ya....</p>
+        <button class="btn btn-outline-secondary" onclick="move()">See more</button>
+       </h3>
+       <br>
+       <div id="myProgress">
+         <div id="myBar"></div>
+       </div>
+       <br>
+      </div>
+    </div>
+  </header>
+  <div class="footer">
+    <p>Copyright&copy;2018 <a href="#">LinggaKA</a></p>
+  </div>
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 10;
+  var id = setInterval(frame, 200);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      window.location="https://itk.ac.id/";
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src='main.js'></script>
+</script>
+</body>
+</html>
